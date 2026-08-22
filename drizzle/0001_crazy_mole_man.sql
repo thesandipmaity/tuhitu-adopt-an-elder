@@ -1,0 +1,1 @@
+ALTER TABLE `submissions` ADD `details` text DEFAULT '{}' NOT NULL;

@@ -1,0 +1,5 @@
+TuHiTu Adopt an Elder — final React source handoff
+Published source revision: fa340dc6c308c5c4d41d85c09830fc8f8f14706a
+Published site version: 13
+Snapshot and verification date: 2026-08-18 (Asia/Kolkata)
+Live reference: https://tuhitu-adopt-an-elder-functional.lalitsinghbisht47.chatgpt.site

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Donate to TuHiTu Club | Secure Donation Checkout</title>
+<meta name="description" content="Make a one-time or monthly donation to TuHiTu Club through a secure payment-gateway checkout. Choose ₹500, ₹1,000, ₹2,000, ₹5,000 or a custom amount.">
+<meta name="theme-color" content="#0B1F3A">
+<meta name="codex-preview" content="development">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="checkout-page donate-page">
+<a class="skip-link" href="#main-content">Skip to donation form</a>
+
+<div class="topbar">
+  <div class="container">
+    <div class="topbar-info"><span><i class="fa-solid fa-shield-heart"></i> Secure gateway checkout</span><a href="mailto:connect@tuhitu.org"><i class="fa-solid fa-envelope"></i> connect@tuhitu.org</a></div>
+    <div class="topbar-right"><select class="lang-select" id="langSelect" aria-label="Choose language"><option value="en">English</option><option value="hi">हिन्दी</option><option value="ar">العربية</option></select></div>
+  </div>
+</div>
+
+<header class="site-header" id="siteHeader">
+  <div class="container nav-wrap">
+    <a href="/" class="brand" aria-label="TuHiTu Club Adopt an Elder home"><span class="mark"><img src="https://res.cloudinary.com/dfb2esugz/image/upload/v1787250614/Logo_1_qzasej.png" alt="TuHiTu Club logo" width="42" height="42" loading="eager" decoding="async"></span><span class="brand-text"><span>TuHiTu Club</span><span class="tagline">Adopt an Elder. Restore Dignity. Renew Hope.</span></span></a>
+    <nav class="main-nav" id="mainNav" aria-label="Primary navigation">
+      <div class="nav-dropdown"><button class="nav-dropdown-trigger" type="button" aria-expanded="false" aria-controls="aboutMenu">About <i class="fa-solid fa-chevron-down" aria-hidden="true"></i></button><div class="nav-dropdown-menu" id="aboutMenu"><a href="/about">About TuHiTu Club</a><a href="/about/our-model">Our Mission &amp; Model</a><a href="/about/impact">Impact &amp; Reach</a><a href="/about/stories">Stories &amp; Updates</a><a href="/about/governance">Governance &amp; Safeguarding</a></div></div>
+      <a href="/sponsor">Sponsor</a><a href="/partner-with-us">Partner With Us</a><a href="/?action=elder-registration">Register yourself</a><a href="/care-homes">Care Homes</a>
+    </nav>
+    <div class="header-actions">
+      <a href="/volunteer" class="btn btn-ghost btn-sm"><i class="fa-solid fa-user-plus"></i><span>Become a Companion</span></a>
+      <span class="donate-action"><a href="#donation-checkout" class="btn btn-primary btn-sm" aria-current="page"><i class="fa-solid fa-heart"></i><span>Donate</span></a><span class="tax-note"><i class="fa-solid fa-certificate" aria-hidden="true"></i><span class="tax-label-full">80G Tax Benefit Available*</span><span class="tax-label-short">80G Available*</span></span></span>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false"><i class="fa-solid fa-bars"></i></button>
+    </div>
+  </div>
+</header>
+<div class="nav-backdrop" id="navBackdrop"></div>
+
+<main id="main-content">
+  <section class="donation-checkout-section" id="donation-checkout">
+    <div class="dot-grid" aria-hidden="true"></div>
+    <div class="container donation-checkout-grid">
+      <div class="checkout-story reveal">
+        <span class="eyebrow">Give A Conversation Somewhere To Begin</span>
+        <h1>Your donation can help an elder feel <em>heard, remembered and connected.</em></h1>
+        <p class="lead">Choose an amount, tell us who you are and continue to the authorised payment gateway. TuHiTu Club never asks for card, UPI or bank credentials on this website.</p>
+        <div class="checkout-impact-list">
+          <div><i class="fa-solid fa-user-shield"></i><span><strong>Companion readiness</strong>Orientation, checks and safeguarding preparation.</span></div>
+          <div><i class="fa-solid fa-people-arrows"></i><span><strong>Thoughtful coordination</strong>Consent-led matching and ongoing programme support.</span></div>
+          <div><i class="fa-solid fa-phone-volume"></i><span><strong>Accessible companionship</strong>Calls, letters, visits and community activities.</span></div>
+        </div>
+        <a href="/donation-details" class="checkout-info-link">Want to understand fund use and receipts first? <strong>Read donation information</strong> <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+
+      <div class="checkout-card reveal">
+        <div class="checkout-card-head">
+          <div><span class="mini-label">Secure Donation</span><h2>Choose your contribution</h2></div>
+          <span class="checkout-80g"><strong>80G</strong><small>tax benefit available*</small></span>
+        </div>
+
+        <form id="donationCheckoutForm" class="checkout-form" novalidate>
+          <input class="hp-field" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <fieldset class="choice-fieldset frequency-choice">
+            <legend>Giving frequency</legend>
+            <div class="segmented-control">
+              <label><input type="radio" name="donationFrequency" value="one-time" checked><span>One-time</span></label>
+              <label><input type="radio" name="donationFrequency" value="monthly"><span>Monthly</span></label>
+            </div>
+          </fieldset>
+
+          <fieldset class="choice-fieldset amount-choice">
+            <legend>Choose an amount</legend>
+            <div class="amount-options" id="amountOptions">
+              <label><input type="radio" name="donationAmount" value="500" checked><span>₹500</span></label>
+              <label><input type="radio" name="donationAmount" value="1000"><span>₹1,000</span></label>
+              <label><input type="radio" name="donationAmount" value="2000"><span>₹2,000</span></label>
+              <label><input type="radio" name="donationAmount" value="5000"><span>₹5,000</span></label>
+              <label><input type="radio" name="donationAmount" value="custom"><span>Custom</span></label>
+            </div>
+            <div class="custom-amount-field" id="customAmountField" hidden><label for="customDonationAmount">Custom amount</label><div class="currency-input"><span id="customCurrencySymbol">₹</span><input id="customDonationAmount" name="customDonationAmount" type="number" min="100" step="1" inputmode="decimal" placeholder="Enter amount"><span class="field-error" data-checkout-error="customDonationAmount"></span></div></div>
+          </fieldset>
+
+          <div class="form-grid compact-form-grid">
+            <div class="field"><label for="checkoutName">Full name <span aria-hidden="true">*</span></label><input id="checkoutName" name="fullName" type="text" autocomplete="name" maxlength="100" required><span class="field-error" data-checkout-error="fullName"></span></div>
+            <div class="field"><label for="checkoutEmail">Email <span aria-hidden="true">*</span></label><input id="checkoutEmail" name="email" type="email" autocomplete="email" inputmode="email" maxlength="160" required><span class="field-error" data-checkout-error="email"></span></div>
+            <div class="field"><label for="checkoutPhone">Phone / WhatsApp <span aria-hidden="true">*</span></label><input id="checkoutPhone" name="phone" type="tel" autocomplete="tel" inputmode="tel" maxlength="24" required><span class="field-error" data-checkout-error="phone"></span></div>
+            <div class="field"><label for="checkoutCountry">Country <span aria-hidden="true">*</span></label><input id="checkoutCountry" name="country" type="text" autocomplete="country-name" maxlength="80" required><span class="field-error" data-checkout-error="country"></span></div>
+            <div class="field field-full"><label for="checkoutCurrency">Payment currency <span aria-hidden="true">*</span></label><select id="checkoutCurrency" name="donationCurrency" required><option value="INR">INR — Indian Rupee</option><option value="USD">USD — US Dollar</option><option value="AED">AED — UAE Dirham</option><option value="GBP">GBP — British Pound</option><option value="EUR">EUR — Euro</option><option value="CAD">CAD — Canadian Dollar</option><option value="AUD">AUD — Australian Dollar</option></select><span class="field-hint">Preset amounts are shown in the selected currency. Gateway availability can vary by country.</span></div>
+          </div>
+
+          <label class="consent-field" for="checkoutConsent"><input type="checkbox" id="checkoutConsent" name="consent" required><span>I agree to the <a href="/about/governance#privacy">privacy and donation terms</a> and authorise TuHiTu Club to create this payment request. <span aria-hidden="true">*</span></span></label>
+          <span class="field-error consent-error" data-checkout-error="consent"></span>
+
+          <button class="btn btn-primary btn-block checkout-submit" type="submit" id="checkoutSubmit"><i class="fa-solid fa-lock"></i><span>Proceed to Secure Payment</span></button>
+          <p class="gateway-note"><i class="fa-solid fa-shield-halved"></i> Payment credentials are entered only on the authorised gateway.</p>
+          <p class="submission-status" id="checkoutStatus" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section class="checkout-assurance">
+    <div class="container checkout-assurance-grid">
+      <div><i class="fa-solid fa-certificate"></i><span><strong>80G receipts</strong>Eligible Indian donations may qualify, subject to law and a valid receipt.</span></div>
+      <div><i class="fa-solid fa-rotate-left"></i><span><strong>Payment support</strong>Report a failed, duplicate or incorrect payment through official contact details.</span></div>
+      <div><i class="fa-solid fa-file-shield"></i><span><strong>Responsible records</strong>Donation intent and gateway status are recorded for acknowledgement and reconciliation.</span></div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer compact-footer" id="contact">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><a href="/" class="brand" aria-label="TuHiTu Club home"><span class="mark"><img src="https://res.cloudinary.com/dfb2esugz/image/upload/v1787250614/Logo_1_qzasej.png" alt="TuHiTu Club logo" width="42" height="42" loading="lazy" decoding="async"></span><span class="brand-text"><span>TuHiTu Club</span></span></a><p>Adopt an Elder. Restore Dignity. Renew Hope.</p><div class="initiative-block"><span>An initiative by FDHS</span><img src="/images/fdhs-logo.png" alt="Federation of Digital Health Sciences" width="393" height="162"></div></div>
+      <div class="footer-col"><h4>Donation Information</h4><ul><li><a href="/donation-details">How donations help</a></li><li><a href="/about/governance#donations">Donation policy</a></li><li><a href="/about/governance#privacy">Privacy policy</a></li><li><a href="/about/governance#grievance">Payment support</a></li></ul></div>
+      <div class="footer-col"><h4>Get Involved</h4><ul><li><a href="/volunteer">Companion</a></li><li><a href="/sponsor">Sponsor</a></li><li><a href="/partner-with-us">Partner With Us</a></li><li><a href="/?action=elder-registration">Register yourself</a></li><li><a href="/care-homes">Care Homes</a></li></ul></div>
+      <div class="footer-col footer-contact"><h4>Contact</h4><ul><li><i class="fa-solid fa-envelope"></i><a href="mailto:connect@tuhitu.org">connect@tuhitu.org</a></li><li><i class="fa-solid fa-phone"></i><a href="tel:+919599661292">+91 95996 61292</a></li><li><i class="fa-solid fa-location-dot"></i><span>Gurgaon · Chandigarh · Pune · Dubai</span></li></ul></div>
+    </div>
+    <div class="footer-compliance"><p><strong>80G benefit:</strong> Eligible Indian donations may qualify for deduction under Section 80G, subject to applicable law and issuance of a valid receipt.</p><p><strong>Gateway notice:</strong> TuHiTu Club does not collect or store card, UPI PIN or online-banking credentials. Payment is completed with the authorised provider.</p></div>
+    <div class="footer-bottom"><span>© 2026 TuHiTu Club. All rights reserved.</span><div class="legal-links"><a href="/about/governance#privacy">Privacy</a><a href="/about/governance#safeguarding">Safeguarding</a><a href="/about/governance#donations">Donation Policy</a><a href="/about/governance#grievance">Grievance</a></div></div>
+  </div>
+</footer>
+
+<button class="back-to-top" id="backToTop" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+<div class="toast" id="toast" role="status" aria-live="polite"><i class="fa-solid fa-circle-info"></i><span id="toastMsg"></span></div>
+<script src="/js/script.js"></script>
+<script src="/js/form.js"></script>
+</body>
+</html>

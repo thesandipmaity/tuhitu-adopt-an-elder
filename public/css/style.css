@@ -33,7 +33,7 @@
 
 /* ---------- Reset ---------- */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; overflow-x: hidden; max-width: 100vw; }
 body {
   font-family: var(--font-body);
   color: var(--ink);
@@ -41,6 +41,7 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
+  max-width: 100vw;
 }
 img { max-width: 100%; display: block; }
 a { color: inherit; text-decoration: none; }
@@ -495,6 +496,7 @@ body.modal-open { overflow: hidden; }
 .field input, .field select, .field textarea {
   width: 100%; border: 1px solid #CFC8BA; border-radius: var(--radius-sm);
   background: var(--white); color: var(--ink); padding: 12px 13px; min-height: 46px; transition: border-color .2s ease, box-shadow .2s ease;
+  min-width: 0;
 }
 .field textarea { resize: vertical; min-height: 112px; }
 .field input:hover, .field select:hover, .field textarea:hover { border-color: var(--navy-600); }
@@ -878,11 +880,10 @@ footer.site-footer { background: var(--navy-950); color: rgba(255,255,255,0.72);
 }
 .footer-social a:hover { background: var(--amber-500); border-color: var(--amber-500); color: var(--navy-950); }
 .initiative-block {
-  display: grid; gap: 7px; width: min(100%, 228px); margin-top: 22px; padding: 12px 14px;
-  border: 1px solid rgba(255,255,255,.14); border-radius: var(--radius-sm); background: rgba(255,255,255,.96);
+  display: grid; gap: 7px; width: min(100%, 228px); margin-top: 22px;
 }
 .initiative-block span {
-  color: var(--navy-700); font-size: .66rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.7); font-size: .66rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
 }
 .initiative-block img { width: 100%; height: auto; }
 .footer-col h4 { color: var(--white); font-size: 0.85rem; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 18px; }

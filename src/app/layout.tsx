@@ -13,9 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "TuHiTu Club | Adopt an Elder",
+  title: "TuHiTu Cares | Adopt an Elder",
   description:
-    "TuHiTu Club connects volunteers, sponsors and community partners with elders through safe, regular companionship.",
+    "TuHiTu Cares connects volunteers, sponsors and community partners with elders through safe, regular companionship.",
   other: {
     "codex-preview": "development",
   },

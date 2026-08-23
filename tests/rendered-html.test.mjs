@@ -104,7 +104,7 @@ test("renders the approved launch, trust, donation and contact updates", async (
   assert.match(html, /80G Tax Benefit Available/i);
   assert.match(html, /Federation of Digital Health Sciences/i);
   assert.match(html, /connect@tuhitu\.org/i);
-  assert.match(html, /\+91 95996 61292/i);
+  assert.match(html, /\+91 9218191502/i);
   assert.match(html, /Gurgaon · Chandigarh · Pune/i);
   assert.match(html, /International contact:<\/strong> Dubai/i);
   assert.doesNotMatch(html, /> Oceania</i);

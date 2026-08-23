@@ -1,5 +1,5 @@
 /* ============================================================
-   TuHiTu Club — Adopt an Elder | Global Campaign Website
+   TuHiTu Cares — Adopt an Elder | Global Campaign Website
    ============================================================ */
 
 :root {
@@ -1952,3 +1952,4 @@ footer.site-footer { background: var(--navy-950); color: rgba(255,255,255,0.72);
   }
   .reveal, .reveal-stagger > * { opacity: 1 !important; transform: none !important; }
 }
+.topbar { display: none !important; }

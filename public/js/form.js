@@ -1,5 +1,5 @@
 // ============================================================
-// TuHiTu Club — Adopt an Elder | Form workflows
+// TuHiTu Cares — Adopt an Elder | Form workflows
 // ============================================================
 document.addEventListener('DOMContentLoaded', () => {
   const $ = (selector, root = document) => root.querySelector(selector);
@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const formConfigs = {
     volunteer: {
       type: 'volunteer',
-      eyebrow: 'Companion With TuHiTu Club',
+      eyebrow: 'Companion With TuHiTu Cares',
       title: 'Become a Companion',
       intro: 'Share your preferred schedule, language and location. Matching begins only after verification and safeguarding checks.',
       organisation: false,
@@ -92,7 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     partner: {
       type: 'partner',
-      eyebrow: 'Partner With TuHiTu Club',
+      eyebrow: 'Partner With TuHiTu Cares',
       title: 'Register Your Organisation',
       intro: 'Care homes, community centres and NGOs can register their interest in offering elders free companionship support.',
       organisation: true,
@@ -102,7 +102,7 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     donation: {
       type: 'donation',
-      eyebrow: 'Support TuHiTu Club',
+      eyebrow: 'Support TuHiTu Cares',
       title: 'Express Your Donation Interest',
       intro: 'Choose a contribution preference. We never collect card or bank details on this form; our team will share secure next steps.',
       organisation: false,

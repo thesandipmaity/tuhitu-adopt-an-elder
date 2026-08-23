@@ -1,5 +1,5 @@
 // ============================================================
-// TuHiTu Club — Adopt an Elder | Site interactions
+// TuHiTu Cares — Adopt an Elder | Site interactions
 // ============================================================
 document.addEventListener('DOMContentLoaded', () => {
   const $ = (selector, root = document) => root.querySelector(selector);
@@ -20,11 +20,12 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   /* ---------- Non-blocking homepage service launch notice ---------- */
+  /*
   if (window.location.pathname === '/') {
     const launchNotice = document.createElement('aside');
     launchNotice.className = 'launch-notice';
     launchNotice.setAttribute('role', 'region');
-    launchNotice.setAttribute('aria-label', 'TuHiTu Club service launch');
+    launchNotice.setAttribute('aria-label', 'TuHiTu Cares service launch');
     launchNotice.innerHTML = `
       <button class="launch-notice-close" type="button" aria-label="Dismiss service launch notice">
         <i class="fa-solid fa-xmark"></i>
@@ -55,6 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
+  */
 
   /* ---------- Sticky header and back to top ---------- */
   const header = $('#siteHeader');
@@ -321,20 +323,20 @@ document.addEventListener('DOMContentLoaded', () => {
     'story-one': {
       eyebrow: 'Programme Note · Why It Matters',
       title: 'Why regular companionship matters in elder care',
-      body: '<p>Companionship is not a substitute for clinical or family care. It adds something different: a consistent human relationship built around listening, respect and shared time.</p><ul><li>Regular contact can create something meaningful to look forward to.</li><li>Conversation can help elders feel heard, remembered and connected.</li><li>Consistency matters more than grand gestures.</li></ul><p>TuHiTu Club is designed to make that connection safe, structured and sustainable.</p>',
+      body: '<p>Companionship is not a substitute for clinical or family care. It adds something different: a consistent human relationship built around listening, respect and shared time.</p><ul><li>Regular contact can create something meaningful to look forward to.</li><li>Conversation can help elders feel heard, remembered and connected.</li><li>Consistency matters more than grand gestures.</li></ul><p>TuHiTu Cares is designed to make that connection safe, structured and sustainable.</p>',
       button: 'Get Programme Updates',
       action: 'newsletter',
     },
     'story-two': {
       eyebrow: 'Programme Note · Companion Readiness',
-      title: 'How TuHiTu Club will prepare and support companions',
+      title: 'How TuHiTu Cares will prepare and support companions',
       body: '<p>Registering interest is the first step—not an automatic match. The planned pathway includes review, verification, orientation and safeguarding preparation before an approved participant is introduced to an elder.</p><ul><li>Preferences such as language, availability and connection format are discussed.</li><li>Responsibilities and escalation routes are clarified before matching.</li><li>Ongoing check-ins help both sides raise questions or request a change.</li></ul>',
-      button: 'Companion With TuHiTu Club',
+      button: 'Companion With TuHiTu Cares',
       action: 'volunteer',
     },
     'story-three': {
       eyebrow: 'Programme Note · Community Partnerships',
-      title: 'How organisations can introduce TuHiTu Club safely',
+      title: 'How organisations can introduce TuHiTu Cares safely',
       body: '<p>Care homes, senior communities, NGOs and community centres remain central to a safe programme. No elder should be registered or matched without an appropriate consent-led process.</p><ul><li>A named coordinator supports scheduling and communication.</li><li>Only necessary, non-sensitive information is collected at the enquiry stage.</li><li>Roles, safeguards and escalation routes are confirmed before launch.</li></ul>',
       button: 'Discuss a Partnership',
       action: 'partner',
@@ -342,35 +344,35 @@ document.addEventListener('DOMContentLoaded', () => {
     privacy: {
       eyebrow: 'Privacy',
       title: 'Privacy Policy',
-      body: '<p>TuHiTu Club collects only the contact, programme and donation-request information needed to respond, review and coordinate the action you choose.</p><ul><li>Card numbers, UPI PINs and online-banking credentials are entered only with the authorised payment gateway and are not stored by TuHiTu Club.</li><li>Do not submit medical records or identity documents through first-stage programme forms.</li><li>You may ask to update or delete submitted information by emailing connect@tuhitu.org, subject to records TuHiTu Club must retain by law.</li><li>Newsletter details are used only for TuHiTu Club updates and can be unsubscribed at any time.</li></ul>',
-      button: 'Contact TuHiTu Club',
+      body: '<p>TuHiTu Cares collects only the contact, programme and donation-request information needed to respond, review and coordinate the action you choose.</p><ul><li>Card numbers, UPI PINs and online-banking credentials are entered only with the authorised payment gateway and are not stored by TuHiTu Cares.</li><li>Do not submit medical records or identity documents through first-stage programme forms.</li><li>You may ask to update or delete submitted information by emailing connect@tuhitu.org, subject to records TuHiTu Cares must retain by law.</li><li>Newsletter details are used only for TuHiTu Cares updates and can be unsubscribed at any time.</li></ul>',
+      button: 'Contact TuHiTu Cares',
       action: 'contact',
     },
     terms: {
       eyebrow: 'Website Terms',
       title: 'Terms of Use',
-      body: '<p>This website provides information and action pathways for the TuHiTu Club Adopt an Elder initiative. Submitting a programme form does not guarantee a volunteer match, partnership, sponsorship, funding or care-home approval.</p><ul><li>Use the website lawfully and provide accurate information.</li><li>Donation payment is completed through the authorised gateway; TuHiTu Club does not request card, UPI PIN or online-banking credentials directly.</li><li>Programme participation remains subject to TuHiTu Club verification, consent, safeguarding and operational review.</li></ul>',
-      button: 'Contact TuHiTu Club',
+      body: '<p>This website provides information and action pathways for the TuHiTu Cares Adopt an Elder initiative. Submitting a programme form does not guarantee a volunteer match, partnership, sponsorship, funding or care-home approval.</p><ul><li>Use the website lawfully and provide accurate information.</li><li>Donation payment is completed through the authorised gateway; TuHiTu Cares does not request card, UPI PIN or online-banking credentials directly.</li><li>Programme participation remains subject to TuHiTu Cares verification, consent, safeguarding and operational review.</li></ul>',
+      button: 'Contact TuHiTu Cares',
       action: 'contact',
     },
     safeguarding: {
       eyebrow: 'Safety First',
       title: 'Safeguarding',
-      body: '<p>TuHiTu Club is designed around safe, supported intergenerational connection. This website does not directly match or connect volunteers with elders.</p><ul><li>Approved volunteers complete the required verification and safeguarding preparation before matching.</li><li>Pairings consider language, interests, availability and the elder’s support context.</li><li>Safeguarding questions or concerns should be reported promptly to connect@tuhitu.org or +91 95996 61292.</li></ul>',
+      body: '<p>TuHiTu Cares is designed around safe, supported intergenerational connection. This website does not directly match or connect volunteers with elders.</p><ul><li>Approved volunteers complete the required verification and safeguarding preparation before matching.</li><li>Pairings consider language, interests, availability and the elder’s support context.</li><li>Safeguarding questions or concerns should be reported promptly to connect@tuhitu.org or +91 9218191502.</li></ul>',
       button: 'Ask a Safeguarding Question',
       action: 'contact',
     },
     'donation-policy': {
       eyebrow: 'Donor Information',
       title: 'Donation & Receipt Policy',
-      body: '<p>The Donate checkout records the donor request and hands payment to the authorised gateway. TuHiTu Club does not store card numbers, UPI PINs or online-banking credentials.</p><ul><li>One-time, monthly and currency availability depend on the configured provider and donor location.</li><li>Eligible Indian donations may qualify for an 80G deduction, subject to applicable law and issuance of a valid receipt.</li><li>Donors may be asked for information legally required for acknowledgement or receipt.</li><li>International donors should obtain independent advice on tax treatment in their jurisdiction.</li><li>Failed, duplicate, cancelled or incorrect payment queries should include the TuHiTu Club and gateway references where available.</li></ul>',
-      button: 'Contact TuHiTu Club',
+      body: '<p>The Donate checkout records the donor request and hands payment to the authorised gateway. TuHiTu Cares does not store card numbers, UPI PINs or online-banking credentials.</p><ul><li>One-time, monthly and currency availability depend on the configured provider and donor location.</li><li>Eligible Indian donations may qualify for an 80G deduction, subject to applicable law and issuance of a valid receipt.</li><li>Donors may be asked for information legally required for acknowledgement or receipt.</li><li>International donors should obtain independent advice on tax treatment in their jurisdiction.</li><li>Failed, duplicate, cancelled or incorrect payment queries should include the TuHiTu Cares and gateway references where available.</li></ul>',
+      button: 'Contact TuHiTu Cares',
       action: 'contact',
     },
     grievance: {
       eyebrow: 'Accountability',
       title: 'Grievance & Complaints',
-      body: '<p>Questions or complaints about safeguarding, data handling, volunteering, partnerships, sponsorships or donations can be submitted to connect@tuhitu.org or raised by phone at +91 95996 61292.</p><ul><li>Include your name, contact details, the relevant reference number if available, and a clear description of the concern.</li><li>Do not email medical records, identity documents, banking credentials or other unnecessary sensitive information.</li><li>Urgent safeguarding concerns should be identified clearly so they can be prioritised.</li></ul>',
+      body: '<p>Questions or complaints about safeguarding, data handling, volunteering, partnerships, sponsorships or donations can be submitted to connect@tuhitu.org or raised by phone at +91 9218191502.</p><ul><li>Include your name, contact details, the relevant reference number if available, and a clear description of the concern.</li><li>Do not email medical records, identity documents, banking credentials or other unnecessary sensitive information.</li><li>Urgent safeguarding concerns should be identified clearly so they can be prioritised.</li></ul>',
       button: 'Email a Concern',
       action: 'contact',
     },

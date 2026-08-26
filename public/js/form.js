@@ -284,6 +284,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const elderCitySelect = $('#elderCity');
   const elderOtherCityField = $('#elderOtherCityField');
   const elderOtherCityInput = $('#elderOtherCity');
+  const elderCompanionshipOptions = $$('input[name="companionshipType"]', elderRegistrationForm || document);
 
   const clearElderRegistrationErrors = () => {
     $$('.field-error', elderRegistrationForm || document).forEach((error) => {
@@ -334,6 +335,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const validateElderRegistrationField = (input) => {
     if (!input || input.type === 'hidden' || input.closest('[hidden]')) return true;
+
+    if (input.name === 'companionshipType') {
+      const selected = elderCompanionshipOptions.filter((option) => option.checked);
+      const message = !selected.length
+        ? 'Please choose at least one option.'
+        : selected.length > 3
+          ? 'Please choose no more than 3 options.'
+          : '';
+      elderCompanionshipOptions.forEach((option) => {
+        option.classList.toggle('invalid', Boolean(message));
+        if (message) option.setAttribute('aria-invalid', 'true');
+        else option.removeAttribute('aria-invalid');
+      });
+      const error = elderRegistrationError('companionshipType');
+      if (error) error.textContent = message;
+      return !message;
+    }
 
     if (input.type === 'radio') {
       const group = $$(`input[name="${input.name}"]`, elderRegistrationForm);
@@ -391,6 +409,20 @@ document.addEventListener('DOMContentLoaded', () => {
         $$('input[name="registrationFor"]', elderRegistrationForm).forEach((radio) => validateElderRegistrationField(radio));
         return;
       }
+      if (input.name === 'companionshipType') {
+        if (input.checked && elderCompanionshipOptions.filter((option) => option.checked).length > 3) {
+          input.checked = false;
+          elderCompanionshipOptions.forEach((option) => {
+            option.classList.add('invalid');
+            option.setAttribute('aria-invalid', 'true');
+          });
+          const error = elderRegistrationError('companionshipType');
+          if (error) error.textContent = 'You can select up to 3 options.';
+          return;
+        }
+        validateElderRegistrationField(input);
+        return;
+      }
       if (input.getAttribute('aria-invalid') === 'true' || input.type === 'checkbox' || input.tagName === 'SELECT') {
         validateElderRegistrationField(input);
       }
@@ -420,6 +452,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const formData = new FormData(elderRegistrationForm);
     const payload = Object.fromEntries(formData.entries());
+    payload.companionshipType = formData.getAll('companionshipType');
     payload.consent = $('#elderRegistrationConsent')?.checked === true;
     payload.sourceUrl = window.location.href.split('#')[0];
     payload.language = $('#langSelect')?.value || 'en';

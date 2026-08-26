@@ -560,6 +560,7 @@
         <a href="/about/governance#grievance">Grievance &amp; Complaints</a>
       </div>
     </div>
+    <p class="footer-credit">Made by <a href="https://iambuzzmaker.com/" target="_blank" rel="noopener noreferrer">I AM BUZZ MAKER</a></p>
   </div>
 </footer>
 
@@ -806,21 +807,23 @@
                 </select>
                 <span class="field-error" data-error-for="livingArrangement"></span>
               </div>
-              <div class="field">
-                <label for="elderCompanionshipType">10. Preferred Type of Companionship <span aria-hidden="true">*</span></label>
-                <select id="elderCompanionshipType" name="companionshipType" required>
-                  <option value="">Select companionship type</option>
-                  <option value="Phone Calls">Phone Calls</option>
-                  <option value="Video Calls">Video Calls</option>
-                  <option value="In-Person Visits">In-Person Visits</option>
-                  <option value="Walks / Outdoor Activities">Walks / Outdoor Activities</option>
-                  <option value="Games / Reading / Hobbies">Games / Reading / Hobbies</option>
-                  <option value="Community Events &amp; Activities">Community Events &amp; Activities</option>
-                  <option value="Technology Help">Technology Help</option>
-                  <option value="General Companionship">General Companionship</option>
-                  <option value="No Preference">No Preference</option>
-                </select>
-                <span class="field-error" data-error-for="companionshipType"></span>
+              <div class="field field-full companionship-preferences-field">
+                <fieldset aria-describedby="elderCompanionshipHint elderCompanionshipError">
+                  <legend>10. Preferred Types of Companionship <span aria-hidden="true">*</span></legend>
+                  <p class="field-hint" id="elderCompanionshipHint">Choose up to 3 options.</p>
+                  <div class="companionship-option-grid">
+                    <label class="companionship-option"><input type="checkbox" name="companionshipType" value="Phone Calls"><span><i class="fa-solid fa-phone"></i>Phone Calls</span></label>
+                    <label class="companionship-option"><input type="checkbox" name="companionshipType" value="Video Calls"><span><i class="fa-solid fa-video"></i>Video Calls</span></label>
+                    <label class="companionship-option"><input type="checkbox" name="companionshipType" value="In-Person Visits"><span><i class="fa-solid fa-handshake"></i>In-Person Visits</span></label>
+                    <label class="companionship-option"><input type="checkbox" name="companionshipType" value="Walks / Outdoor Activities"><span><i class="fa-solid fa-person-walking"></i>Walks / Outdoor Activities</span></label>
+                    <label class="companionship-option"><input type="checkbox" name="companionshipType" value="Games / Reading / Hobbies"><span><i class="fa-solid fa-book-open"></i>Games / Reading / Hobbies</span></label>
+                    <label class="companionship-option"><input type="checkbox" name="companionshipType" value="Community Events &amp; Activities"><span><i class="fa-solid fa-people-group"></i>Community Events &amp; Activities</span></label>
+                    <label class="companionship-option"><input type="checkbox" name="companionshipType" value="Technology Help"><span><i class="fa-solid fa-laptop"></i>Technology Help</span></label>
+                    <label class="companionship-option"><input type="checkbox" name="companionshipType" value="General Companionship"><span><i class="fa-solid fa-heart"></i>General Companionship</span></label>
+                    <label class="companionship-option"><input type="checkbox" name="companionshipType" value="No Preference"><span><i class="fa-solid fa-circle-check"></i>No Preference</span></label>
+                  </div>
+                </fieldset>
+                <span class="field-error" id="elderCompanionshipError" data-error-for="companionshipType"></span>
               </div>
               <div class="field">
                 <label for="elderEmergencyContactName">11. Emergency / Family Contact Name <span aria-hidden="true">*</span></label>

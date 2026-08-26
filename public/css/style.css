@@ -899,6 +899,9 @@ footer.site-footer { background: var(--navy-950); color: rgba(255,255,255,0.72);
 .footer-compliance strong { color: rgba(255,255,255,.85); }
 .footer-bottom { display: flex; align-items: center; justify-content: space-between; padding: 24px 0; flex-wrap: wrap; gap: 12px; font-size: 0.82rem; color: rgba(255,255,255,0.5); }
 .footer-bottom .legal-links { display: flex; flex-wrap: wrap; gap: 10px 20px; }
+.footer-credit { margin: 0; padding: 0 0 24px; text-align: center; color: rgba(255,255,255,0.5); font-size: 0.76rem; }
+.footer-credit a { color: rgba(255,255,255,0.78); text-decoration: none; font-weight: 700; letter-spacing: 0.04em; }
+.footer-credit a:hover, .footer-credit a:focus-visible { color: var(--amber-400); text-decoration: underline; text-underline-offset: 3px; }
 
 /* ---------- Back to top ---------- */
 .back-to-top {
@@ -1799,6 +1802,51 @@ footer.site-footer { background: var(--navy-950); color: rgba(255,255,255,0.72);
   letter-spacing: 0.01em;
   color: #242844;
 }
+.companionship-preferences-field fieldset {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+.companionship-preferences-field legend {
+  padding: 0;
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: #242844;
+}
+.companionship-preferences-field .field-hint { margin: 5px 0 10px; }
+.companionship-option-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+.companionship-option { position: relative; display: block; cursor: pointer; }
+.companionship-option input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+.companionship-option span {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 46px;
+  padding: 10px 12px;
+  border: 1px solid #e3ddd3;
+  border-radius: 12px;
+  background: #fff;
+  color: #303549;
+  font-size: 0.82rem;
+  line-height: 1.25;
+  transition: border-color .2s ease, background .2s ease, box-shadow .2s ease;
+}
+.companionship-option span i { color: #8c33ff; }
+.companionship-option:hover span { border-color: #c8bfd5; }
+.companionship-option input:focus-visible + span { outline: none; border-color: #e96fa8; box-shadow: 0 0 0 3px rgba(233, 111, 168, 0.12); }
+.companionship-option input:checked + span { border-color: #ef86b7; background: linear-gradient(180deg, #fff7fc, #fff); box-shadow: inset 0 0 0 1px rgba(239, 134, 183, 0.2); }
+.companionship-option input.invalid + span { border-color: #dc2626; }
 .elder-registration-form .field input,
 .elder-registration-form .field select,
 .elder-registration-form .field textarea {
@@ -1924,9 +1972,11 @@ footer.site-footer { background: var(--navy-950); color: rgba(255,255,255,0.72);
     flex-basis: 24px;
   }
   .elder-registration-form .btn.btn-primary { min-height: 52px; }
+  .companionship-option-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
 @media (max-width: 480px) {
+  .companionship-option-grid { grid-template-columns: 1fr; }
   .selection-card-grid { grid-template-columns: 1fr; }
   .elder-modal-form-card {
     padding: 22px 14px 18px;

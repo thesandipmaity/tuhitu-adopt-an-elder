@@ -13,15 +13,16 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "TuHiTu Cares | Adopt an Elder",
+  title: "TuHiTu Satya",
   description:
-    "TuHiTu Cares connects volunteers, sponsors and community partners with elders through safe, regular companionship.",
+    "TuHiTu Satya connects volunteers, sponsors and community partners with elders through safe, regular companionship.",
   other: {
     "codex-preview": "development",
   },
   icons: {
-    icon: "/favicon.svg",
-    shortcut: "/favicon.svg",
+    icon: "https://res.cloudinary.com/s1yfknfm/image/upload/v1788437799/TuHiTu_Satya_Fav_Icon.png",
+    shortcut:
+      "https://res.cloudinary.com/s1yfknfm/image/upload/v1788437799/TuHiTu_Satya_Fav_Icon.png",
   },
 };
 

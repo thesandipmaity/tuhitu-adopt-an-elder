@@ -1,4 +1,5 @@
 import { cp, mkdir, rm, writeFile } from "node:fs/promises";
+import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 
@@ -8,6 +9,12 @@ const projectRoot = path.resolve(__dirname, "..");
 const distRoot = path.join(projectRoot, "dist");
 const clientRoot = path.join(distRoot, "client");
 const workerPath = path.join(distRoot, "server", "index.js");
+const blogDataPath = path.join(projectRoot, "src", "app", "blogs", "blog-data.generated.ts");
+
+const blogDataSource = fs.readFileSync(blogDataPath, "utf8");
+const blogSlugs = [...blogDataSource.matchAll(/"id": "blog-\d+"[\s\S]*?"slug": "([^"]+)"/g)].map(
+  (match) => match[1],
+);
 
 const routes = [
   "/",
@@ -22,6 +29,8 @@ const routes = [
   "/donation-details",
   "/partner-with-us",
   "/care-homes",
+  "/blogs",
+  ...blogSlugs.map((slug) => `/blogs/${slug}`),
 ];
 
 const copyClientToDistRoot = async () => {
@@ -97,6 +106,8 @@ const writeRedirects = async () => {
     "/donation-details/index.html /donation-details 301",
     "/partner-with-us/index.html /partner-with-us 301",
     "/care-homes/index.html /care-homes 301",
+    "/blogs/index.html /blogs 301",
+    ...blogSlugs.map((slug) => `/blogs/${slug}/index.html /blogs/${slug} 301`),
   ].join("\n");
 
   await writeFile(path.join(distRoot, "_redirects"), `${rules}\n`, "utf8");
@@ -109,6 +120,7 @@ await rm(path.join(distRoot, "donate"), { recursive: true, force: true });
 await rm(path.join(distRoot, "donation-details"), { recursive: true, force: true });
 await rm(path.join(distRoot, "partner-with-us"), { recursive: true, force: true });
 await rm(path.join(distRoot, "care-homes"), { recursive: true, force: true });
+await rm(path.join(distRoot, "blogs"), { recursive: true, force: true });
 await rm(path.join(distRoot, "index.html"), { force: true });
 await rm(path.join(distRoot, "_redirects"), { force: true });
 

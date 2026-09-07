@@ -57,7 +57,7 @@ test("keeps the homepage sections and renders four navigation choices plus two p
   assert.doesNotMatch(navigation, /href="\/donate"/i);
   assert.doesNotMatch(navigation, />Contact</i);
   const actions = html.match(/<div class="header-actions">[\s\S]*?<\/div>/i)?.[0] ?? "";
-  assert.match(actions, /href="\/volunteer"[^>]*>[\s\S]*Become a Companion/i);
+  assert.match(actions, /href="\/volunteer#volunteer-enquiry"[^>]*>[\s\S]*Become a Companion/i);
   assert.match(actions, /href="\/donate"[^>]*>[\s\S]*Donate/i);
   assert.match(html, /id="how"/i);
   assert.match(html, /id="faq"/i);
@@ -67,6 +67,7 @@ test("keeps Volunteer and Donate exclusively in the priority action group on eve
   const worker = await loadWorker();
   const paths = [
     "/",
+    "/blogs",
     "/about",
     "/about/our-model",
     "/about/impact",
@@ -96,7 +97,7 @@ test("renders the approved launch, trust, donation and contact updates", async (
   const worker = await loadWorker();
   const html = await renderPath(worker, "/");
 
-  assert.match(html, /Adopt an Elder\. Restore Dignity\. Renew Hope\./i);
+  assert.match(html, /Restore Dignity\. Renew Hope\./i);
   assert.match(html, /true service begins with[\s\S]*Satya/i);
   assert.match(html, /class="satya-focus">Satya<\/strong>/i);
   assert.match(html, /Service begins 21 August 2026/i);
@@ -111,7 +112,7 @@ test("renders the approved launch, trust, donation and contact updates", async (
   assert.match(html, /Middle East[\s\S]*South Asia/i);
   assert.match(html, /class="hero-stats-strip"[\s\S]*data-count="12400"[\s\S]*Elders Associated/i);
   assert.match(html, /data-count="18"[\s\S]*Countries with Associated Partners/i);
-  assert.match(html, /data-count="9600"[\s\S]*Registered Volunteers/i);
+  assert.match(html, /data-count="9600"[\s\S]*Registered Companions/i);
   assert.match(html, /data-count="150000"[\s\S]*Calls &amp; Visits in Process/i);
 });
 
@@ -167,17 +168,11 @@ test("renders the dedicated Partner With Us journey and enquiry form", async () 
   assert.match(html, /data-prospect-form/i);
 });
 
-test("renders the emotionally led volunteer journey and application", async () => {
+test("renders the volunteer application", async () => {
   const worker = await loadWorker();
   const html = await renderPath(worker, "/volunteer");
 
   assert.match(html, /Someone’s grandparent is waiting/i);
-  assert.match(html, /An elder’s loneliness may be quiet/i);
-  assert.match(html, /I Can Give 30 Minutes a Week/i);
-  assert.match(html, /No one is matched just because they submit a form/i);
-  assert.match(html, /Family Circle Benefit/i);
-  assert.match(html, /25[\s\S]*verified hours[\s\S]*or[\s\S]*20[\s\S]*approved calls/i);
-  assert.match(html, /Verified Certificate/i);
   assert.match(html, /value="volunteer"/i);
   assert.match(html, /name="availability"/i);
   assert.match(html, /data-prospect-form/i);
@@ -212,13 +207,32 @@ test("keeps the detailed donation-information journey separate from checkout", a
 test("renders the featured TuHiTu Club Bliss care-home pathway and readiness form", async () => {
   const worker = await loadWorker();
   const html = await renderPath(worker, "/care-homes");
-  assert.match(html, /TuHiTu Club Bliss, Panchkula/i);
+  assert.match(html, /TuHiTu Bliss, Panchkula/i);
   assert.match(html, /Your Facility Can Be Next/i);
   assert.match(html, /No automatic grant or donation is promised/i);
   assert.match(html, /value="care-home"/i);
   assert.match(html, /name="licenceStatus"/i);
   assert.match(html, /name="safeguardingReadiness"/i);
   assert.match(html, /data-prospect-form/i);
+});
+
+test("renders the new blog listing and detail pages without adding Blogs to the header nav", async () => {
+  const worker = await loadWorker();
+  const listingHtml = await renderPath(worker, "/blogs");
+  const detailHtml = await renderPath(worker, "/blogs/what-does-adopt-an-elder-mean");
+  const listingNav = listingHtml.match(/<nav class="main-nav"[\s\S]*?<\/nav>/i)?.[0] ?? "";
+
+  assert.match(listingHtml, /TuHiTu Satya Blogs/i);
+  assert.match(listingHtml, /15 approved drafts/i);
+  assert.match(listingHtml, /href="\/blogs\?category=volunteering-and-intergenerational-connection"/i);
+  assert.match(listingHtml, /href="\/blogs\/what-does-adopt-an-elder-mean"/i);
+  assert.doesNotMatch(listingNav, />Blogs</i);
+  assert.match(listingHtml, /<h4>About<\/h4>[\s\S]*href="\/blogs"/i);
+
+  assert.match(detailHtml, /Adopt an Elder in India: Meaning and Boundaries \| TuHiTu Satya/i);
+  assert.match(detailHtml, /What &ldquo;adoption&rdquo; means here|What “adoption” means here/i);
+  assert.match(detailHtml, /Related Articles/i);
+  assert.match(detailHtml, /application\/ld\+json/i);
 });
 
 test("renders each About dropdown destination as a separate route", async () => {

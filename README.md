@@ -1,6 +1,6 @@
-# TuHiTu Adopt an Elder
+# TuHiTu Satya
 
-The React 19 source for the TuHiTu Adopt an Elder website, running on
+The React 19 source for the TuHiTu Satya website, running on
 [vinext](https://github.com/cloudflare/vinext) with Cloudflare D1 and Drizzle.
 Start with `DEVELOPER_HANDOFF.md` for the route map, deployment notes and
 payment-adapter requirements.
